@@ -1,0 +1,21 @@
+{
+  "name": "fennec-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "monaco-editor": "^0.52.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.3",
+    "vite-plugin-static-copy": "^2.2.0"
+  }
+}

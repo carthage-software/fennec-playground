@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fennec PHP Playground</title>
+    <link href="./src/styles.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100 text-gray-800 h-screen flex">
+    <div class="flex flex-col w-1/2 p-4 border-r border-gray-200">
+        <h1 class="text-lg font-semibold mb-4 text-gray-800">PHP Playground</h1>
+        <div id="input-editor" class="flex-grow rounded-lg shadow"></div>
+        <button id="analyze-btn" class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition">
+            Analyze Code
+        </button>
+    </div>
+    <div class="flex flex-col w-1/2 p-4">
+        <div class="flex space-x-2 mb-4">
+            <button data-tab="result" class="tab-button bg-purple-600 text-white px-4 py-2 rounded">Result</button>
+            <button data-tab="ast" class="tab-button bg-gray-300 px-4 py-2 rounded">AST</button>
+            <button data-tab="names" class="tab-button bg-gray-300 px-4 py-2 rounded">Names</button>
+            <button data-tab="symbols" class="tab-button bg-gray-300 px-4 py-2 rounded">Symbols</button>
+            <button data-tab="interner" class="tab-button bg-gray-300 px-4 py-2 rounded">Interned Strings</button>
+        </div>
+        <div id="result" class="tab-content flex-grow">
+            <div id="formatted-code" class="h-full rounded-lg shadow"></div>
+        </div>
+        <div id="ast" class="tab-content flex-grow hidden">
+            <div id="ast-editor" class="h-full rounded-lg shadow"></div>
+        </div>
+        <div id="names" class="tab-content flex-grow hidden">
+            <table class="w-full table-auto border-collapse border border-gray-200 rounded-lg shadow">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border px-4 py-2">Offset</th>
+                        <th class="border px-4 py-2">Value</th>
+                    </tr>
+                </thead>
+                <tbody id="names-table"></tbody>
+            </table>
+        </div>
+        <div id="symbols" class="tab-content flex-grow hidden">
+            <table class="w-full table-auto border-collapse border border-gray-200 rounded-lg shadow">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border px-4 py-2">Kind</th>
+                        <th class="border px-4 py-2">Namespace</th>
+                        <th class="border px-4 py-2">Name</th>
+                        <th class="border px-4 py-2">Fully Qualified Name</th>
+                        <th class="border px-4 py-2">Scope</th>
+                    </tr>
+                </thead>
+                <tbody id="symbols-table"></tbody>
+            </table>
+        </div>
+        <div id="interner" class="tab-content flex-grow hidden">
+            <table class="w-full table-auto border-collapse border border-gray-200 rounded-lg shadow">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border px-4 py-2">Identifier</th>
+                        <th class="border px-4 py-2">Value</th>
+                    </tr>
+                </thead>
+                <tbody id="interner-table"></tbody>
+            </table>
+        </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
